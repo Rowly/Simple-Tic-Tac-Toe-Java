@@ -1,0 +1,66 @@
+# course config files
+*.yaml
+
+# gradle
+.gradle/
+build
+
+
+# idea config
+.idea
+
+# old stages
+/Simple Tic-Tac-Toe (Java)/*
+!/Simple Tic-Tac-Toe (Java)/task/
+/Simple Tic-Tac-Toe (Java)/task/*
+!/Simple Tic-Tac-Toe (Java)/task/src
+
+# Project exclude paths
+/Topics/Array/Initializing an array of longs/out/
+/Topics/Array/Initializing an array of longs/out/production/classes/
+/Topics/Array/Sum of multiples of 3 in an array/out/
+/Topics/Array/Sum of multiples of 3 in an array/out/production/classes/
+/Topics/Arrays as parameters/Adding values/out/
+/Topics/Arrays as parameters/Adding values/out/production/classes/
+/Topics/Arrays as parameters/Get first and last elements/out/
+/Topics/Arrays as parameters/Get first and last elements/out/production/classes/
+/Topics/Calling methods/Call me awesome/out/
+/Topics/Calling methods/Call me awesome/out/production/classes/
+/Topics/Errors in programs/Fix compile-time errors/out/
+/Topics/Errors in programs/Fix compile-time errors/out/production/classes/
+/Topics/Errors in programs/Validating and squaring user input/out/
+/Topics/Errors in programs/Validating and squaring user input/out/production/classes/
+/Topics/Functional decomposition/Checking divisibility and printing appropriate strings/out/
+/Topics/Functional decomposition/Checking divisibility and printing appropriate strings/out/production/classes/
+/Topics/Functional decomposition/Stop, yield, go  Traffic conductor's waltz/out/
+/Topics/Functional decomposition/Stop, yield, go  Traffic conductor's waltz/out/production/classes/
+/Topics/Initializing new instances. Constructor/Account and its owner/out/
+/Topics/Initializing new instances. Constructor/Account and its owner/out/production/classes/
+/Topics/Iterating over arrays/Individual taxes/out/
+/Topics/Iterating over arrays/Individual taxes/out/production/classes/
+/Topics/Iterating over arrays/Sum array elements greater than a value/out/
+/Topics/Iterating over arrays/Sum array elements greater than a value/out/production/classes/
+/Topics/Iterating over arrays/The sum of array elements/out/
+/Topics/Iterating over arrays/The sum of array elements/out/production/classes/
+/Topics/Iterating over arrays/Two numbers never occur next to each other/out/
+/Topics/Iterating over arrays/Two numbers never occur next to each other/out/production/classes/
+/Topics/Multidimensional array/Reverse elements/out/
+/Topics/Multidimensional array/Reverse elements/out/production/classes/
+/Topics/Multidimensional array/Swap the columns/out/
+/Topics/Multidimensional array/Swap the columns/out/production/classes/
+/Topics/Multidimensional array/Symmetric matrix/out/
+/Topics/Multidimensional array/Symmetric matrix/out/production/classes/
+/Topics/Multidimensional array/The third row/out/
+/Topics/Multidimensional array/The third row/out/production/classes/
+/Topics/Multiple conditions  switch/Day of the week from an integer/out/
+/Topics/Multiple conditions  switch/Day of the week from an integer/out/production/classes/
+/Topics/Multiple conditions  switch/Floor-space of the room/out/
+/Topics/Multiple conditions  switch/Floor-space of the room/out/production/classes/
+/Topics/Objects and their properties/Null or not/out/
+/Topics/Objects and their properties/Null or not/out/production/classes/
+/Topics/Primitive and reference types/Creating a primitive/out/
+/Topics/Primitive and reference types/Creating a primitive/out/production/classes/
+/Topics/Static members/Detail manufacturing/out/
+/Topics/Static members/Detail manufacturing/out/production/classes/
+/Topics/Static members/Time constants/out/
+/Topics/Static members/Time constants/out/production/classes/
