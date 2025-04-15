@@ -120,21 +120,27 @@ public class Main {
         return true;
     }
 
-    private static boolean checkRow(char[][] board, char target) {
-         return (board[0][0] == target && board[0][1] == target && board[0][2] == target) ||
-                 (board[1][0] == target && board[1][1] == target && board[1][2] == target) ||
-                 (board[2][0] == target && board[2][1] == target && board[2][2] == target);
+    private static boolean checkRow(char[][] board, char player) {
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][0] == player && board[i][1] == player && board[i][2] == player) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    private static boolean checkColumn(char[][] board, char target) {
-        return (board[0][0] == target && board[1][0] == target && board[2][0] == target) ||
-                (board[0][1] == target && board[1][1] == target && board[2][1] == target) ||
-                (board[0][2] == target && board[1][2] == target && board[2][2] == target);
+    private static boolean checkColumn(char[][] board, char player) {
+        for (int i = 0; i < board.length; i++) {
+            if (board[0][i] == player && board[1][i] == player && board[2][i] == player) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    private static boolean checkDiagonals(char[][] board, char target) {
-        return (board[0][0] == target && board[1][1] == target && board[2][2] == target) ||
-                (board[0][2] == target && board[1][1] == target && board[2][0] == target);
+    private static boolean checkDiagonals(char[][] board, char player) {
+        return (board[0][0] == player && board[1][1] == player && board[2][2] == player) ||
+                (board[0][2] == player && board[1][1] == player && board[2][0] == player);
     }
 
     private static boolean isImpossible(char[][] board) {
