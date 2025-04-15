@@ -3,22 +3,20 @@ package tictactoe;
 import java.util.Scanner;
 
 public class Main {
+
+    final static int boardSize = 3;
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // write your code here
-        char[][] board = drawInitialBoard();
-        boolean xTurn = true;
-        boolean oTurn = !xTurn;
+        char[][] board = drawBoard(null, true);
+        boolean isXTurn = true;
+        boolean isOTurn = !isXTurn;
         char piece;
         while (true) {
-            int coordX = 0;
-            int coordY = 0;
-            if (xTurn) {
-                piece = 'X';
-            } else {
-                piece = 'O';
-            }
+            int coordX;
+            int coordY;
+            piece = (isXTurn ? 'X' : 'O');
             System.out.println("Make a move for " + piece + ": provide x y coords.");
             System.out.println("(1 1) (1 2) (1 3)");
             System.out.println("(2 1) (2 2) (2 3)");
@@ -49,8 +47,8 @@ public class Main {
                 break;
             }
             board = updateBoard(board, coordX, coordY, piece);
-            drawUpdatedBoard(board);
-            xTurn = !xTurn;
+            drawBoard(board, false);
+            isXTurn = !isXTurn;
             boolean xWins = checkRow(board, 'X') || checkColumn(board, 'X') || checkDiagonals(board, 'X');
             boolean oWins = checkRow(board, 'O') || checkColumn(board, 'O') || checkDiagonals(board, 'O');
             boolean impossible = isImpossible(board) || (xWins && oWins);
@@ -74,13 +72,17 @@ public class Main {
         scanner.close();
     }
 
-    private static char[][] drawInitialBoard() {
-        char[][] board = new char[3][3];
+    private static char[][] drawBoard(char[][] board, boolean initialize) {
+        if (initialize) {
+            board = new char[boardSize][boardSize];
+        }
         System.out.println("---------");
-        for (int i = 0; i < board.length; i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.print("|");
-            for (int j = 0; j < board[i].length; j++) {
-                board[i][j] = '_';
+            for (int j = 0; j < 3; j++) {
+                if (initialize) {
+                    board[i][j] = '_';
+                }
                 System.out.print(" " + board[i][j]);
             }
             System.out.print(" |");
@@ -88,19 +90,6 @@ public class Main {
         }
         System.out.println("---------");
         return board;
-    }
-
-    private static void drawUpdatedBoard(char[][] board) {
-        System.out.println("---------");
-        for (int i = 0; i < board.length; i++) {
-            System.out.print("|");
-            for (int j = 0; j < board[i].length; j++) {
-                System.out.print(" " + board[i][j]);
-            }
-            System.out.print(" |");
-            System.out.println();
-        }
-        System.out.println("---------");
     }
 
     private static char[][] updateBoard(char[][] board, int coordX, int coordY, char insert) {
@@ -109,21 +98,7 @@ public class Main {
     }
 
     private static boolean isValidCoord(int coordX, int coordY) {
-        int[] valid =  {1, 2, 3};
-        boolean xValid = false;
-        boolean yValid = false;
-        for (int i : valid) {
-            if (coordX == i) {
-                xValid = true;
-                break;
-            }
-        }
-        for (int i : valid) {
-            if (coordY == i) {
-                yValid = true;
-            }
-        }
-        return xValid && yValid;
+        return coordX >= 1 && coordX <= boardSize && coordY >= 1 && coordY <= boardSize;
     }
 
     private static boolean isEmptySpace(char[][] board, int coordX, int coordY) {
