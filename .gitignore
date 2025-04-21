@@ -4,6 +4,12 @@
 # gradle
 .gradle/
 build
+gradlew
+build.gradle
+gradlew.bat
+settings.gradle
+gradle/wrapper/gradle-wrapper.jar
+gradle/wrapper/gradle-wrapper.properties
 
 
 # idea config
